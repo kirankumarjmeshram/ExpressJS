@@ -18,11 +18,22 @@ app.get("/",(req,res)=>{
 app.get("/users",oneMorelogger,(req,res)=>{
     return res.send("All users")
 })
-
-app.get("/abc",(req,res)=>{
-    return res.send("All users")
+//logger3
+app.get("/abc",oneMorelogger,logger3("Kiran"),(req,res)=>{
+    return res.send("run two middleware one by one ")
 })
 
+function logger3(data){
+   return  function (req,res,next){
+        req.name ="Kirankumar"
+        console.log("oneLogger3");
+        console.log("BeforeLogger3");
+        next();
+        console.log("AfterLogger3")
+    }
+    
+}
+//express will run middleware 
 //middleware
 function logger(req,res,next){
     req.name ="Kirankumar"
