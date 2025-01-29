@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/kirankumarjmeshram/ExpressJS#readme",
   "dependencies": {
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "expressjs": "file:"
   }
 }
